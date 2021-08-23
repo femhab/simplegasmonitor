@@ -1,0 +1,23 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Gas Monitor",
+      "description": "Monitor gas price expended by list of addresses",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:8000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Gas Monitor",
+        "description": "API for gas monitor"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"]
+  }
