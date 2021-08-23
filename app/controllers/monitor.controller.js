@@ -1,5 +1,6 @@
 //fetch gas status fo n days
-exports.fetch = (req, res) => {  
+exports.fetch = (req, res) => { 
+    res.header("Access-Control-Allow-Origin", "*"); 
     if(!req.body.address_list || req.body.address_list.length == 0){
         res.status(400).send({
             message: "at least one address is required"

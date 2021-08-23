@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Connect Wallet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+    <div class="container-contact150">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+                <span class="contact100-form-title" id="spanTitle">
+                    Monitor Gas Price
+                </span>
+        
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+                    <span class="label-input100">Add Address *</span>
+                    <input class="input100" type="text" name="email" placeholder="Add address" id="new_address">
+                </div>
+                
+                <div class="wrap-input100 bg1 rs1-wrap-input100">
+                    <span class="label-input100">Number of days from now</span>
+                    <input class="input100" type="number" placeholder="Enter number of days from now" id="no_of_days">
+                </div>
+                <a class="" style="color:green; font-weight: bold; font-size: large;" onclick="addMoreAddress()">Add more address? </a><span id="selected-address"></span>
+                <div class="container-contact100-form-btn" onclick="SubmitGasPriceRequest()">
+                    <button class="contact100-form-btn" type="button" id="loginBtn">
+                        <span id="spanButton">
+                            View gas price used
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>		
+		</div>
+		<!-- <span>Disclaimer: Stakers should be aware of the risk and govern themselves accordingly. Recognising that the laws and regulations involving
+			cryptocurrency are different everywhere, stakers are required to check with the laws that exist within their own
+			jurisdiction or region to ascertain the legality of the activities which are covered by these games.</span> -->
+    </div>
+    <environment include="Development">
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/vendor/jquery/jquery-3.2.1.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="vendor/jquery/jquery-3.2.1.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+
+    <script src="js/util.js" asp-append-version="true"></script>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script>
+
+
+
+    </script>
+
+</body>
+</html>

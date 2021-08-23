@@ -1,0 +1,138 @@
+﻿.alerty {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    right: 0px;
+    z-index: 100;
+}
+.myspinner:hover path {
+    fill: #ccc9c9;
+}
+.registerSwitch{
+    cursor:pointer;
+}
+
+.myspinner {
+    margin-bottom: 1em;
+    width: 83px;
+    height: 83px;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinner;
+    -moz-animation-duration: 1500ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinner;
+    -ms-animation-duration: 1500ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spinner;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spinner {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spinner {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.authcardlist {
+    background: #e8e8e8;
+    padding: 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.authcardlist:hover {
+    background: #ccc9c9;
+}
+
+    .authcardlist p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.selectedMark{
+    padding-left:10px;
+}
+.display-loader{
+    display:flex !important;
+}
+.eighty{
+    width:80% !important;
+}
+.indicatorCustom p {
+    display:none;
+    font-size: 0.7em;
+    color: green;
+}
+.display_none {
+    display: none !important;
+}
+
+
+.otp-digit{
+    margin-right:0.794em !important;
+}
+.new-password{
+    padding-left:0px !important;
+}
+.new-password p {
+    margin-bottom: 0.4em !important;
+}
+.count_class {
+    padding: 1em 0.5em;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.beneficiaryBtn {
+    left: 84% !important;
+    border-right: none !important;
+    cursor:pointer;
+}
+
