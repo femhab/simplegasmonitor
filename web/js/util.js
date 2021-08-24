@@ -1,8 +1,8 @@
-﻿
+﻿//address list to be use as request
 var addressList = [];
-
 document.querySelector("#selected-address").textContent = addressList.toString();
 
+//add more address to addressList
 async function addMoreAddress(){
     let newAddress = document.querySelector('input[id="new_address"]').value; 
     
@@ -16,6 +16,8 @@ async function addMoreAddress(){
     return;
 }
 
+
+//extra request validation method
 function SubmitGasPriceRequest()
 {
     let newAddress = document.querySelector('input[id="new_address"]').value; 
@@ -36,6 +38,7 @@ function SubmitGasPriceRequest()
     requestGasPriceData(addressList, parseInt(noOfdays));
 }
 
+//using ajax to call the backend endpoint
 function requestGasPriceData(addressList, noOfDays) {
     $.ajax({
         url: 'http://localhost:8082/api/monitor',
