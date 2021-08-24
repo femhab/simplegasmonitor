@@ -8,7 +8,7 @@ const ethNetwork = 'https://ropsten.infura.io/v3/17c54743049449a39c919ba3fccbac4
 const web3 = new Web3(new Web3.providers.HttpProvider(ethNetwork));
 
 //fetch gas status fo n days
-exports.fetch = (req, res) => { 
+exports.fetch = async (req, res) => { 
     if(!req.body.address_list || req.body.address_list.length == 0){
         res.status(400).send({
             message: "at least one address is required"
@@ -22,14 +22,18 @@ exports.fetch = (req, res) => {
         return;
     }
     const responseArray = [];
-    //var tag = null;
-    //const currentBlock  = web3.eth.getBlockNumber().then(console.log);
+    var date = new Date();
+    var currentTimeStamp = Math.trunc(date.getTime() / 1000);
+    var previousTimeStamp = Math.trunc(date.setDate(date.getDate() - req.body.no_of_days_ago) / 1000);
+    const currentBlock  = await axios.get(`https://api.etherscan.io/api?module=block&action=getblocknobytime&timestamp=${currentTimeStamp}&closest=before&apikey=8RJR4G44DZ4AEQVP5HGWZ65EF1EGKITWEP`);
+    const previosBlock  = await axios.get(`https://api.etherscan.io/api?module=block&action=getblocknobytime&timestamp=${previousTimeStamp}&closest=before&apikey=8RJR4G44DZ4AEQVP5HGWZ65EF1EGKITWEP`);
     var taregetUrl = '';
     for(var i=0; i<req.body.address_list.length; i++){
         const address = req.body.address_list[i];
         const currentCount = i;     
         if(address != null && address.length == 42){
-            taregetUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=8RJR4G44DZ4AEQVP5HGWZ65EF1EGKITWEP`;
+            taregetUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=${previosBlock.data.result}&endblock=${currentBlock.data.result}&page=1&offset=10&sort=asc&apikey=8RJR4G44DZ4AEQVP5HGWZ65EF1EGKITWEP`;
+            console.log(taregetUrl);
             axios.get(taregetUrl)
             .then(response => {
                 //console.log(response.data.result);
