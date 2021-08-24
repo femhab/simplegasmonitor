@@ -45,8 +45,19 @@ function requestGasPriceData(addressList, noOfDays) {
         headers: {'Access-Control-Allow-Origin': '*'},
         data: { address_list: addressList, no_of_days_ago: noOfDays },
         success: function (response) {
-            if (response.message != null) {
-                console.log(response)
+            console.log(response.gasUsed);
+            if (response.gasUsed.length > 0) {
+                for (var i = 0; i < response.gasUsed.length; i++) {
+                    listView = `
+                        <div class="cell" data-title="Address">
+                            ${response.gasUsed[i].key}
+                        </div>
+                        <div class="cell" data-title="Gas_Used">
+                            ${response.gasUsed[i].value}
+                        </div>
+                        `;
+                        $("#appendView").append(listView);
+                }
             }
             else {
                 alert("request failed")

@@ -40,9 +40,7 @@ exports.fetch = async (req, res) => {
                 //const filteredList = response.data.result.filter(x => x.from == address); question not specific if it is incoming or outgoing
                 var totalUsed = response.data.result.reduce((n, {gasUsed}) => n + parseInt(gasUsed), 0);
                 var gasSpent = web3.utils.fromWei(totalUsed.toString(), "ether");
-                var obj = {};
-                obj[address] = gasSpent;
-                responseArray.push(obj);
+                responseArray.push({key: address, value: gasSpent});
                 if(currentCount == req.body.address_list.length-1){
                     res.status(200).send({
                         message: "successful",
