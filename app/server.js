@@ -23,18 +23,18 @@ const swaggerUi = require("swagger-ui-express");
 swaggerDocument = require("./swagger.json");
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const Web3 = require("web3");
-const ethNetwork = 'https://ropsten.infura.io/v3/17c54743049449a39c919ba3fccbac4a';
-const web3 = new Web3(new Web3.providers.HttpProvider(ethNetwork));
+// const Web3 = require("web3");
+// const ethNetwork = 'https://ropsten.infura.io/v3/17c54743049449a39c919ba3fccbac4a';
+// const web3 = new Web3(new Web3.providers.HttpProvider(ethNetwork));
 
-web3.eth.getTransaction('0xe27520018bbcc1cad463e9cc2cbc358ba16a61b52d34ea294e8204d8c7c713a1', async (err, result) => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    let gasUsed = web3.utils.fromWei(result.gasPrice, "ether");
-    console.log("gasUsed is" + gasUsed + " ETH");
-});
+// web3.eth.getTransaction('0xe27520018bbcc1cad463e9cc2cbc358ba16a61b52d34ea294e8204d8c7c713a1', async (err, result) => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     let gasUsed = web3.utils.fromWei(result.gasPrice, "ether");
+//     console.log("gasUsed is" + gasUsed + " ETH");
+// });
 
 
 
