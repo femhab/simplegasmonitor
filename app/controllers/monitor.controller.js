@@ -24,7 +24,7 @@ exports.fetch = (req, res) => {
     }
     const responseArray = [];
     var tag = null;
-    const currentBlock  = web3.eth.getBlockNumber().then(console.log);
+    //const currentBlock  = web3.eth.getBlockNumber().then(console.log);
     var taregetUrl = '';
     for(var i=0; i<req.body.address_list.length; i++){
         const address = req.body.address_list[i];
@@ -32,7 +32,7 @@ exports.fetch = (req, res) => {
         taregetUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=8RJR4G44DZ4AEQVP5HGWZ65EF1EGKITWEP`;
         axios.get(taregetUrl)
         .then(response => {
-            const filteredList = response.data.result.filter(x => x.from == '0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a');
+            const filteredList = response.data.result.filter(x => x.from == address);
             var totalUsed = filteredList.reduce((n, {gasUsed}) => n + parseInt(gasUsed), 0);
             var gasSpent = web3.utils.fromWei(totalUsed.toString(), "ether");
             var obj = {};

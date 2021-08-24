@@ -46,7 +46,7 @@ function requestGasPriceData(addressList, noOfDays) {
         data: { address_list: addressList, no_of_days_ago: noOfDays },
         success: function (response) {
             if (response.message != null) {
-                alert(response.message)
+                console.log(response)
             }
             else {
                 alert("request failed")
