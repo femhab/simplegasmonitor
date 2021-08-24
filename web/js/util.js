@@ -23,9 +23,9 @@ function SubmitGasPriceRequest()
         alert("at least an address must be supplied")
         return;
     }
-    if(newAddress != null){
-        addressList.push(newAddress);
-    }
+    // if(newAddress != null){
+    //     addressList.push(newAddress);
+    // }
     let noOfdays = document.querySelector('input[id="no_of_days"]').value; 
     if(noOfdays == null || noOfdays <= 0){
         alert("days must be greater than 0")
@@ -33,7 +33,7 @@ function SubmitGasPriceRequest()
     }
     document.querySelector('input[id="no_of_days"]').value = null;
     document.querySelector('input[id="new_address"]').value = null;
-    requestGasPriceData(addressList, noOfdays);
+    requestGasPriceData(addressList, parseInt(noOfdays));
 }
 
 function requestGasPriceData(addressList, noOfDays) {
