@@ -33,7 +33,7 @@ exports.fetch = async (req, res) => {
         const currentCount = i;     
         if(address != null && address.length == 42){
             try{
-                let cachedResponse = memoryCache.getAsync(address + no_of_days_ago.toString());
+                let cachedResponse = memoryCache.getAsync(address + req.body.no_of_days_ago.toString());
                 if(cachedResponse){
                     //deserialize value and push to array
                     responseArray.push(JSON.parse(cachedResponse));
@@ -52,7 +52,7 @@ exports.fetch = async (req, res) => {
                 var gasSpent = web3.utils.fromWei(totalUsed.toString(), "ether");
                 responseArray.push({key: address, value: gasSpent});
                 //cache on memory
-                memoryCache.setAsync(address + no_of_days_ago.toString(), JSON.stringify({key: address, value: gasSpent}), blockNumberTTL);
+                memoryCache.setAsync(address + req.body.no_of_days_ago.toString(), JSON.stringify({key: address, value: gasSpent}), blockNumberTTL);
 
                 if(currentCount == req.body.address_list.length-1){
                     res.status(200).send({
